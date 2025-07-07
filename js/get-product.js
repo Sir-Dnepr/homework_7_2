@@ -1,6 +1,6 @@
 "use strict";
 
-function getSum(firstValue) {
+function getProduct(firstValue) {
     return function(secondValue) {
         const validateResult = validate(firstValue) ?? validate(secondValue) ?? '';
 
@@ -8,7 +8,7 @@ function getSum(firstValue) {
             return validateResult;
         }
 
-        return firstValue + secondValue;
+        return firstValue * secondValue;
     };
 
     function validate(value) {
@@ -18,10 +18,10 @@ function getSum(firstValue) {
     }
 }
 
-console.log(getSum(3.4)(3));
-console.log(getSum(5)(3));
-console.log(getSum('5')(3));
-console.log(getSum('sdfsdfsdf')(3));
-console.log(getSum(NaN)('sdf'));
-console.log(getSum(-3)(true));
-console.log(getSum(-3)(-5555555555555));
+console.log(getProduct(3.4)(3));
+console.log(getProduct(5)(3));
+console.log(getProduct('5')(3));
+console.log(getProduct('sdfsdfsdf')(3));
+console.log(getProduct(NaN)('sdf'));
+console.log(getProduct(-3)(true));
+console.log(getProduct(-3)(-5555555555555));
